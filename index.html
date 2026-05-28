@@ -216,6 +216,8 @@
     ];
 
     const cards = document.getElementById('cards');
+    const statusStyles = {
+    'Vou comprar': 'border-red-500/20 bg-red-500/10 text-red-300','Já tenho': 'border-green-500/20 bg-green-500/10 text-green-300'};
 
     items.forEach(item => {
       cards.innerHTML += `
@@ -229,7 +231,7 @@
 
           <div class="p-6">
             <div class="flex items-center justify-between mb-5">
-              <span class="text-xs px-3 py-1 rounded-full border border-red-500/20 bg-red-500/10 text-red-300">
+              <span class="text-xs px-3 py-1 rounded-full border ${statusStyles[item.status] || 'border-blue-500/20 bg-blue-500/10 text-blue-300'}">
                 ${item.status}
               </span>
             </div>
